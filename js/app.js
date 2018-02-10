@@ -53,7 +53,7 @@ var ViewModel = function() {
       }
     });       
   }, self);
-}
+};
 
 
 //responsive window resize
@@ -66,7 +66,7 @@ window.onresize = function() {
 
 function createInfoWindows(marker, infowindow) {
   //nested IF to ensure previous marker with info window rest its corresponding marker and list item color
-  if(currentMarker != undefined) {
+  if(currentMarker !== null) {
     if(marker.id !== currentMarker.id) {
       currentMarker.setIcon(defaultIcon);
       currentMarker.action('');
@@ -91,7 +91,7 @@ function createInfoWindows(marker, infowindow) {
         weatherContentString = '<ul style="text-align: center;border: 1px solid blue;padding:10px; margin-top: 10px;"><li>Temp: ' + detail.temp_f + '° F</li><li><img style="width: 25px" src="' + detail.icon_url + '">  ' + detail.icon + '</li></ul>';
         infowindow.setContent('<div>' + marker.title + '</div>' + weatherContentString);
       }).catch(function(error){
-        weatherContentString = '<p style="text-align: center;padding:10px; margin-top: 10px;">Sorry! Weather Underground</p><p style="text-align: center;padding:10px; margin-top: 10px;">Could Not Be Loaded</p>'
+        weatherContentString = '<p style="text-align: center;padding:10px; margin-top: 10px;">Sorry! Weather Underground</p><p style="text-align: center;padding:10px; margin-top: 10px;">Could Not Be Loaded</p>';
         infowindow.setContent('<div>' + marker.title + '</div>' + weatherContentString);
       });
 
@@ -132,7 +132,7 @@ function markMap() {
     markers.push(marker);
     marker.addListener('click', goToLocation);
     marker.addListener('mouseover', mouseOverListItem);
-    marker.addListener('mouseout', mouseLeaveListItem)
+    marker.addListener('mouseout', mouseLeaveListItem);
     bounds.extend(markers[i].position);
   }
   map.fitBounds(bounds);
@@ -165,7 +165,7 @@ function hideMarker(marker) {
 //center marker and increase zoom level
 function goToLocation() {
   createInfoWindows(this, largeInfowindow);
-  map.setZoom(12);
+  map.setZoom(15);
   map.setCenter(this.getPosition());
 }
 
@@ -173,7 +173,7 @@ function goToLocation() {
 //when mouse over marker or list item
 //update obserable variable to show color linkage between list item and marker
 function mouseOverListItem() {
-  if(currentMarker != null) {
+  if(currentMarker !== null) {
     if(currentMarker.id != this.id) {
       this.setIcon(highlightedIcon);
       this.action('hovered');
@@ -188,7 +188,7 @@ function mouseOverListItem() {
 //when mouse leave marker or list item
 //update obserable variable to set marker or list item color to default color
 function mouseLeaveListItem() {
-  if(currentMarker != null) {
+  if(currentMarker !== null) {
     if(currentMarker.id != this.id) {
       this.setIcon(defaultIcon);
       this.action('');
