@@ -1,0 +1,70 @@
+@media screen and (max-width: 1435px) {
+	h1 {
+        font-size: 20px;
+    }
+    li.list-item {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 1125px) {
+    h1 {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    h1 {
+        font-size: 16px;
+        width: 200px;
+    }
+
+    #map {
+        left: 200px;
+    }
+
+    .option-box {
+        width: 200px;
+    }
+
+    #places-search {
+        width: 180px;
+        margin: 0;
+        font-size: 12px;
+      }
+    li.list-item {
+        width: 200px;
+    }
+    #hr {
+        width: 180px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 10px;
+        width: 150px;
+    }
+
+    #map {
+        left: 150px;
+    }
+
+    .option-box {
+        width: 150px;
+    }
+
+    #places-search {
+        width: 130px;
+        margin: 0;
+        font-size: 10px;
+      }
+    li.list-item {
+        width: 150px;
+        font-size: 10px;
+        padding: 0;
+    }
+    #hr {
+        width: 130px;
+    }
+}

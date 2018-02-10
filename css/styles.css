@@ -1,0 +1,59 @@
+html,
+body {
+  font-family: Arial, sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#mainbox {
+  padding: 0;
+}
+
+h1 {
+  color: #525454;
+  font-size: 26px;
+  margin: 20px 0 20px 0;
+  text-align: center;
+}
+
+hr {
+  background: #D0D7D9;
+  height: 1px;
+  margin: 20px 0 20px 0;
+  border: none;
+}
+
+#map {
+  bottom:0px;
+  height: 100%;
+  left:20%;
+  position: absolute;
+  right: 0px;
+}
+
+.options-box {
+  background: #fff;
+  height: 100%;
+  line-height: 35px;
+  padding: 10px 10px 30px 10px;
+  width: 20%;
+}
+
+#places-search {
+  width: 100%;
+  padding-left: 15px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+li.list-item {
+  padding: 2px 2px 2px 15px;
+  color: black;
+  background-color: white;
+  font-size: 16px;
+}
